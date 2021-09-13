@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlueGrenade : Grenade
 {
-    [SerializeField] private int _damage;
+    //[SerializeField] private int _damage;
     
     private void Update()
     {
@@ -13,7 +13,7 @@ public class BlueGrenade : Grenade
             countdown -= Time.deltaTime;
 
             if (countdown <= 0)
-                Explode(_damage);
+                Explode(damage);
         }
     }    
 }

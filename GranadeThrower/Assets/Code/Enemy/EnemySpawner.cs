@@ -23,9 +23,7 @@ public class EnemySpawner : ObjectPool
            StartCoroutine(Respawn(enemy));
         }
     }
-
-    
-
+   
     IEnumerator Respawn(GameObject enemy) 
     {
         yield return new WaitForSeconds(_secondsPerSpawn);

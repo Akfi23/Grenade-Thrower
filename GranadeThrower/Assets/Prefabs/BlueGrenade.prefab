@@ -125,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceaca67d3bf7b614798664d732d2844c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 35
   timer: 2
   countdown: 0
   radius: 5
   explossionEffect: {fileID: 198000010585806678, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
   isThrowed: 0
-  _damage: 35

@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public abstract  class Grenade : MonoBehaviour
 {
+    [SerializeField] protected int damage;
     [SerializeField] protected float timer;
     [SerializeField] protected float countdown;
     [SerializeField] protected float radius;
