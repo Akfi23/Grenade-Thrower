@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : ObjectPool
 {
     [SerializeField] private float _secondsPerSpawn;
-    [SerializeField] private float _currentTimer = 0;
 
     private void Start()
     {
@@ -14,27 +13,23 @@ public class EnemySpawner : ObjectPool
 
     private void Update()
     {
-        _currentTimer += Time.deltaTime;
         SpawnEnemies();
     }
 
     private void SpawnEnemies()
-    {
-        if (_currentTimer >= _secondsPerSpawn)
+    {       
+        if (TryGetEnemy(out GameObject enemy))
         {
-            if (TryGetEnemy(out GameObject enemy))
-            {
-                _currentTimer = 0;
-
-                Respawn(enemy);
-            }
+           StartCoroutine(Respawn(enemy));
         }
     }
 
-    private void Respawn(GameObject enemy)
-    {
-        enemy.SetActive(true);
+    
 
+    IEnumerator Respawn(GameObject enemy) 
+    {
+        yield return new WaitForSeconds(_secondsPerSpawn);
         enemy.transform.position = enemy.GetComponent<Enemy>().StartPosition;
+        enemy.SetActive(true);
     }
 }
