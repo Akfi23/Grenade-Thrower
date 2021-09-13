@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RedGrenade : Grenade
-{
-    //[SerializeField] private int _damage;
-    
+{    
     private void Update()
     {
         if (isThrowed == true)

@@ -9,9 +9,10 @@ public abstract  class Grenade : MonoBehaviour
     [SerializeField] protected float countdown;
     [SerializeField] protected float radius;
     [SerializeField] protected ParticleSystem explossionEffect;
+    [SerializeField] protected GrenadeThrower grenadeThrower;
     public Vector3 GrenadePos { get; private set; }
 
-    public  bool isThrowed;
+    public bool isThrowed;
     private void Start()
     {
         countdown = timer;
@@ -34,5 +35,10 @@ public abstract  class Grenade : MonoBehaviour
         }
 
         Destroy(gameObject);
-    }    
+    }
+    
+    protected void SetBoolStatus() 
+    {
+        isThrowed = true;
+    }
 }

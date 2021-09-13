@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BlueGrenade : Grenade
 {
-    //[SerializeField] private int _damage;
-    
     private void Update()
     {
         if (isThrowed == true)
